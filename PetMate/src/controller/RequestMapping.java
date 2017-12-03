@@ -5,6 +5,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import controller.adopt.ListAdoptController;
 import controller.member.*;
 import controller.pet.*;
 public class RequestMapping {
@@ -23,8 +24,8 @@ public class RequestMapping {
         mappings.put("/member/registerSucc/form", new ForwardController("/member/loginForm.jsp"));   
         mappings.put("/member/registerPet/form", new ForwardController("/member/registerPet.jsp"));
         mappings.put("/member/register/pet", new RegisterPetController());
-
-  
+        mappings.put("/member/registerAdopt/form", new ListAdoptController());
+   
         
 //        mappings.put("/user/logout", new LogoutController());
 //        mappings.put("/user/view", new ViewUserController());

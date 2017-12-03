@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>PetMate_Main</title>
 </head>
-<body background="../../images/intro_img.png" bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
+<body background="<c:url value='/images/intro_img.png'/>" bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
 <br>
 <center>
 <h1><font color=#FF5E00 size="24px">PetMate</font></h1>

@@ -92,8 +92,7 @@ function userList(targetUri) {
                 <c:if test="${registerFailed}">value="${user.name}"</c:if>>
          </td>
         </tr>
-         </tr>
-          <tr height="40">
+         <tr height="40">
          <td width="150" align="center" bgcolor="ffffff">Áö¿ª</td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240" name="region" 
