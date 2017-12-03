@@ -1,5 +1,2 @@
-/controller/
-/filter/
-/logback.xml
 /model/
-/schema.sql
+/controller/

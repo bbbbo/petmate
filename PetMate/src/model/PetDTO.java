@@ -2,7 +2,7 @@ package model;
 
 public class PetDTO {
 	private String userID;
-	private String pet_ID;
+	private int pet_ID;
 	private String kind_ID;
 	private String pet_age;
 	private String pet_gender;
@@ -14,10 +14,10 @@ public class PetDTO {
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
-	public String getPet_ID() {
+	public int getPet_ID() {
 		return pet_ID;
 	}
-	public void setPet_ID(String pet_ID) {
+	public void setPet_ID(int pet_ID) {
 		this.pet_ID = pet_ID;
 	}
 	public String getKind_ID() {
@@ -46,7 +46,7 @@ public class PetDTO {
 	}
 	public PetDTO() { };
    
-   public PetDTO(String userID, String pet_ID, String kind_ID, String pet_age, String pet_gender, String pet_name){
+   public PetDTO(String userID, int pet_ID, String kind_ID, String pet_age, String pet_gender, String pet_name){
       this.userID = userID;
       this.pet_ID = pet_ID;
       this.kind_ID = kind_ID;

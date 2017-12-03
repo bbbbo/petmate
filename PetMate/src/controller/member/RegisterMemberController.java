@@ -13,7 +13,7 @@ import model.dao.*;
 import model.service.*;
 
 public class RegisterMemberController implements Controller {
-   private static final Logger log = LoggerFactory.getLogger(RegisterMemberController.class);
+    private static final Logger log = LoggerFactory.getLogger(RegisterMemberController.class);
    private MemberDAO memberDAO = new MemberDAO();
 
     @Override
@@ -35,8 +35,7 @@ public class RegisterMemberController implements Controller {
             throw new ExistingMemberException(member.getUserID() + "는 존재하는 아이디입니다.");
          }
          memberDAO.create(member);
-         return "redirect:/member/list";      // 성공 시 사용자 리스트 화면으로 redirect
-           //list page!!!
+         return "redirect:/member/registerSucc/form";      // 성공 시 회원가입한 내용 보여주는곳으로 redirect작성 필요
          
          
       } catch (ExistingMemberException e) {      // 예외 발생 시 회원가입 form으로 forwarding, Exeption은 model.Service에 새로 정의 필요
