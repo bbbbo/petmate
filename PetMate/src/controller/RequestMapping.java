@@ -37,8 +37,12 @@ public class RequestMapping {
         mappings.put("/adopt/registerAdopt", new RegisterAdoptController());
         mappings.put("/adopt/viewAdopt", new ViewAdoptController());	//입양 상세보기
         
+    
+        mappings.put("/adopt/updateAdoptForm", new UpdateAdoptFormController());	//정보 업데이트 화면 연결
+        mappings.put("/adopt/updateAdopt", new UpdateAdoptController());	//입양 정보 업데이트
+        mappings.put("/adopt/deleteAdopt", new DeleteAdoptController());	//입양 정보 삭제
         mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
-        
+     
         
         
 //        mappings.put("/user/logout", new LogoutController());

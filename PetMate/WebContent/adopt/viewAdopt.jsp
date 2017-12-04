@@ -31,17 +31,17 @@
 <form name = "f" method = "get" action = "<c:url value='/member/registerAdopt/form'/>">
 <table style="background-color: #353535" align="center">
    <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFFF">사용자아이디</td>
+        <td width="150" align="center" bgcolor="#FFFFFF"><b>사용자아이디</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
         &nbsp;<%= adopt.getUserID() %></td>
       </tr>
       <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFFF">pet 나이</td>
+        <td width="150" align="center" bgcolor="#FFFFFF"><b>pet 나이</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
             &nbsp;<%= adopt.getAdopt_age() %></td>
       </tr>
     <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFFF">pet 종류</td>
+        <td width="150" align="center" bgcolor="#FFFFFF"><b>pet 종류</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
              <c:set var="kind" value="<%=adopt.getAdopt_kind() %>"/>
         <c:choose>
@@ -69,12 +69,12 @@
         </c:choose>
       </tr>
       <tr height="30">
-       <td width="150" align="center" bgcolor="#FFFFFF">pet 성별</td>
+       <td width="150" align="center" bgcolor="#FFFFFF"><b>pet 성별</b></td>
        <td width="150" bgcolor="ffffff" style="padding-left:10">
             &nbsp;<%= adopt.getAdopt_gender() %> </td>
       </tr>
       <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFFF">가격</td>
+        <td width="150" align="center" bgcolor="#FFFFFF"><b>가격</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
             &nbsp;<%= adopt.getAdopt_price() %></td>
       </tr>
