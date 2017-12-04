@@ -55,13 +55,13 @@ function userCreate(targetUri) {
        <br>     
        <table style="background-color: #353535" align="center">
           <tr height="30">
-         <td width="100" align="center" bgcolor="ffffff">아이디</td>
+         <td width="100" align="center" bgcolor="ffffff"><b>ID</b></td>
          <td width="200" bgcolor="ffffff" style="padding-left:10">
             <input type="text" style="width:180" name="userID">
          </td>
         </tr>
           <tr height="30">
-         <td width="100" align="center" bgcolor="ffffff">비밀번호</td>
+         <td width="100" align="center" bgcolor="ffffff"><b>비밀번호</b></td>
          <td width="200" bgcolor="ffffff" style="padding-left:10">
             <input type="password" style="width:180" name="pwd">
          </td>

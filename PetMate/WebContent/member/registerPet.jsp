@@ -21,6 +21,7 @@ function petCreate() {
       return false;
    }
    
+   alert("등록되었습니다!");
    form.submit();
 }
 
@@ -42,30 +43,30 @@ function beforePage(targetUri) {
 <form name="form" method="POST" action="<c:url value='/member/registerPet' />">
 	<table style="width:100%" align="center">
 	<tr>
-		<td height="22" align="center"><b>pet 등록</b></td>
+		<td height="22" align="center"><b>My Pet 등록</b></td>
     </tr>
     </table>  
 	<br>
 	<table style="background-color: #353535" align = 'center'>
     <tr height="30"> 
-		<td width="150" align="center" bgcolor="#FFFFFF">pet 이름 </td>
+		<td width="150" align="center" bgcolor="#FFFFFF"><b>pet 이름</b> </td>
 		<td width="250" bgcolor="#FFFFFF" style="padding-left: 10">&nbsp;&nbsp;
 			<input type="text" style="width: 215px;" name="pet_name" /></td>
     </tr>
     <tr height="30"> 
-		<td width="150" align="center" bgcolor="#FFFFFF">pet 나이 </td>
+		<td width="150" align="center" bgcolor="#FFFFFF"><b>pet 나이</b> </td>
 		<td width="250" bgcolor="#FFFFFF" style="padding-left: 10">&nbsp;&nbsp;
 			<input type="text" style="width: 215px;" name="pet_age" /></td>
     </tr>
     <tr height="30"> 
-		<td width="150" align="center" bgcolor="#FFFFFF">pet 성별</td>
+		<td width="150" align="center" bgcolor="#FFFFFF"><b>pet 성별</b></td>
 		<td width="200" bgcolor="#FFFFFF" style="padding-left: 10" align="center">
-			<input type="radio" name="pet_gender" value="수컷" checked="checked"/>수컷
-			<input type="radio" name="pet_gender" value="암컷" />암컷
+			<input type="radio" name="pet_gender" value="남" checked="checked"/>남
+			<input type="radio" name="pet_gender" value="여" />여
 		</td>
     </tr>
     <tr height="30">
-    	<td width="150" align="center" bgcolor="#FFFFFF">pet 종류</td>
+    	<td width="150" align="center" bgcolor="#FFFFFF"><b>pet 종류</b></td>
     	<td width="200" bgcolor="#FFFFFF" style="padding-left: 10" align="center">
     		<select name="kind_ID">
     			<option value="k1">강아지</option>

@@ -5,24 +5,23 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import controller.Controller;
-import model.service.UserManager;
-import model.Member;
+import model.MemberDTO;
 
 public class UpdateUserController implements Controller {
     private static final Logger log = LoggerFactory.getLogger(UpdateUserController.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response)	throws Exception {
-    	Member updateUser = new Member(
-    		request.getParameter("userId"),
-    		request.getParameter("password"),
-    		request.getParameter("name"),
-    		request.getParameter("email"),
-    		request.getParameter("phone"));            
-    	log.debug("Update User : {}", updateUser);
-
-		UserManager manager = UserManager.getInstance();
-		manager.update(updateUser);			
+//    	MemberDTO updateUser = new MemberDTO(
+//    		request.getParameter("userId"),
+//    		request.getParameter("password"),
+//    		request.getParameter("name"),
+//    		request.getParameter("email"),
+//    		request.getParameter("phone"));            
+//    	log.debug("Update User : {}", updateUser);
+//
+//		UserManager manager = UserManager.getInstance();
+//		manager.update(updateUser);			
         return "redirect:/user/list";			
     }
 }

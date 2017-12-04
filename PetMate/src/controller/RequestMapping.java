@@ -34,10 +34,11 @@ public class RequestMapping {
         mappings.put("/member/registerAdopt/form", new ListAdoptController());	//입양 리스트
         mappings.put("/adopt/addAdopt/form" , new ForwardController("/adopt/AddAdopt.jsp"));
         mappings.put("/adopt/registerAdopt", new RegisterAdoptController());
-        
+        mappings.put("/adopt/viewAdopt", new ViewAdoptController());	//입양 상세보기
+        mappings.put("/adopt/viewMyAdopt", new ViewMyAdoptController());	//나의 입양 상세보기 (수정, 삭제)
         
         mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
-        mappings.put("/adopt/viewAdopt", new ViewAdoptController());	//입양 상세보기
+        
         
         
 //        mappings.put("/user/logout", new LogoutController());

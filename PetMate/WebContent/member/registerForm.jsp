@@ -34,6 +34,7 @@ function userCreate() {
 	   return false;
    }
    
+   alert("회원 가입 되었습니다!");
    form.submit();
 }
 
@@ -52,7 +53,7 @@ function userList(targetUri) {
 </tr>
 </table>
 <!-- registration form  -->
-<form name="form" method="POST" action="<c:url value='/member/register' />">
+<form name="form" method="POST" action="<c:url value='/member/registerMember' />">
   <table style="width: 100%">
     <tr>
       <td width="20"></td>
@@ -71,32 +72,32 @@ function userList(targetUri) {
        <br>     
        <table style="background-color: #353535" align="center">
          <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">사용자 ID</td>
+         <td width="150" align="center" bgcolor="ffffff"><b>ID</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240;" name="userId">
          </td>
         </tr>
           <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">비밀번호</td>
+         <td width="150" align="center" bgcolor="ffffff"><b>비밀번호</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="password" style="width: 240" name="pwd">
          </td>
         </tr>
           <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">비밀번호 확인</td>
+         <td width="150" align="center" bgcolor="ffffff"><b>비밀번호 확인</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="password" style="width: 240" name="pwd2">
          </td>
         </tr>
           <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">이름</td>
+         <td width="150" align="center" bgcolor="ffffff"><b>이름</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240" name="name" 
                 <c:if test="${registerFailed}">value="${user.name}"</c:if>>
          </td>
         </tr>
          <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">지역</td>
+         <td width="150" align="center" bgcolor="ffffff"><b>지역</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240" name="region" 
                 <c:if test="${registerFailed}">value="${user.region}"</c:if>>

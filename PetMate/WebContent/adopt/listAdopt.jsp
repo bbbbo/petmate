@@ -44,13 +44,15 @@
   <%
         if(adoptList != null){
             Iterator<AdoptDTO> adoptIter = adoptList.iterator();
+            int flag = 1;
             
             while(adoptIter.hasNext()){
                AdoptDTO adopt = (AdoptDTO)adoptIter.next();
-               System.out.println(adopt.getUserID() + " : " + adopt.getAdopt_ID());
+               String id = adopt.getUserID();
                String adopt_Id = String.valueOf(adopt.getAdopt_ID());
-  %>
-        <tr> <!-- 사용자 ID 클릭시 상세보기  -->
+             
+  %>				
+        <tr> <!-- 사용자 ID와 세션 아이디가 다를 경우   -->
         <td width ="200" align = "center" bgcolor = "ffffff">
            <a href = "<c:url value='/adopt/viewAdopt'>
                  <c:param name='adoptId' value ='<%= adopt_Id %>'/>
@@ -59,11 +61,12 @@
            <%= adopt.getUserID() %>
            </a>
         </td>
+       
          <td width ="200" align = "center" bgcolor = "ffffff"><%= adopt.getAdopt_kind() %>
          </td>
          </tr>
     <%
-              }
+            }
         }
     %>
         </table>
