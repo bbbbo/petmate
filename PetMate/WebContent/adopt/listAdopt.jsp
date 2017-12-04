@@ -82,8 +82,8 @@
        <br>     
        <table style="background-color:#353535" align = 'center'>
          <tr height="30">
-         <td width="200" align="center" bgcolor="#FFFFFF" align = "center"><b>사용자 아이디</b></td>
-         <td width = "200" align = "center" bgcolor = "#FFFFFF"><b>펫 종류</b></td> 
+         <td width="200" align="center" bgcolor="#FFFFF" align = "center"><b>사용자 아이디</b></td>
+         <td width = "200" align = "center" bgcolor = "#FFFFF"><b>펫 종류</b></td> 
         </tr>
         
   <%

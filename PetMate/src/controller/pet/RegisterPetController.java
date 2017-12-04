@@ -11,6 +11,7 @@ import controller.Controller;
 import controller.member.UserSessionUtils;
 import model.PetDTO;
 import model.dao.PetDAO;
+import model.service.PetManager;
 
 public class RegisterPetController implements Controller {
 	private static final Logger log = LoggerFactory.getLogger(RegisterPetController.class);
@@ -31,11 +32,15 @@ public class RegisterPetController implements Controller {
 		
 		log.debug("Create Pet : {}", pet);
 		
-//		try{
-			petDAO.create(pet);
-			return "redirect:/main.jsp"; 	//main page로 넘어가기
-//		}
+		try{
+			PetManager manager = PetManager.getInstance();
+	        manager.create(pet);
+		}catch(Exception e){
+			e.printStackTrace();
+			return "redirect:/main.jsp";
+		}
 		
+		return "/member/listPet"; 	//리스트 보여주기
 		
 	}
 	  

@@ -92,19 +92,19 @@ function addAdopt() {
        </table><br>
        <table style="background-color: #353535" align = 'center'>
          <tr height="30">
-         <td width="200" align="center" bgcolor="#FFFFFF" align = "center"><b>pet 가격</b></td>
+         <td width="150" align="center" bgcolor="#FFFFF" align = "center"><b>pet 가격</b></td>
          <td width = "200" align = "center" bgcolor = "#FFFFFF">
          <input type="text" style="width:240" name="adopt_price">
          </td>
         </tr>
          <tr height="30">
-         <td width="200" align="center" bgcolor="#FFFFFF" align = "center"><b>pet 나이</b></td>
+         <td width="150" align="center" bgcolor="#FFFFF" align = "center"><b>pet 나이</b></td>
          <td width = "200" align = "center" bgcolor = "#FFFFFF">
          <input type="text" style="width:240" name="adopt_age">
          </td>
         </tr>
         <tr height="30"> 
-        <td width="200" align="center" bgcolor="#FFFFFF"><b>pet 종류</b></td> 
+        <td width="150" align="center" bgcolor="#FFFFF"><b>pet 종류</b></td> 
         <td width="200" bgcolor="#FFFFFF" style="padding-left: 10" align="center"> 
          <select name="adopt_kind"> 
             <option value="k1">강아지</option> 
@@ -118,7 +118,7 @@ function addAdopt() {
      </td>
      </tr> 
        <tr height="30">
-      <td width="200" align="center" bgcolor="#FFFFFF"><b>pet 성별</b></td>
+      <td width="150" align="center" bgcolor="#FFFFF"><b>pet 성별</b></td>
         <td width = "200" align = "center" bgcolor = "#FFFFFF">
           <input type="radio" name="adopt_gender" value="남" checked="checked"/>남
       <input type="radio" name="adopt_gender" value="여" />여

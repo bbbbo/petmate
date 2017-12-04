@@ -26,11 +26,12 @@ public class RequestMapping {
         mappings.put("/member/registerSucc/form", new ForwardController("/member/loginForm.jsp"));   
         mappings.put("/member/registerPet/form", new ForwardController("/member/registerPet.jsp"));
         mappings.put("/member/registerPet", new RegisterPetController());	//pet 등록
+        mappings.put("/member/listPet", new ListPetController());	//pet list 출력
         mappings.put("/member/myPage/form", new ForwardController("/member/myPage.jsp"));	//마이페이지 이동
         
         mappings.put("/member/registerHospital/form", new ForwardController("/hospital/searchHospital.jsp"));	//병원 추가
-        mappings.put("/member/hospital", new ForwardController("/hospital/searchHospital_list.jsp")); 
-        mappings.put("/member/HospitalList", new searchHospitalController());	//병원 검색
+        mappings.put("/hospital/list/form", new ForwardController("/hospital/searchHospital_list.jsp")); 
+        mappings.put("/hospital/HospitalList", new searchHospitalController());	//병원 검색
         
         mappings.put("/member/registerAdopt/form", new ListAdoptController());	//입양 리스트
         mappings.put("/adopt/addAdopt/form" , new ForwardController("/adopt/AddAdopt.jsp"));
@@ -41,7 +42,7 @@ public class RequestMapping {
         mappings.put("/adopt/updateAdoptForm", new UpdateAdoptFormController());	//정보 업데이트 화면 연결
         mappings.put("/adopt/updateAdopt", new UpdateAdoptController());	//입양 정보 업데이트
         mappings.put("/adopt/deleteAdopt", new DeleteAdoptController());	//입양 정보 삭제
-        mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
+//        mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
      
         mappings.put("/member/myPage/form", new MyPageViewController());   //myPage보기
         mappings.put("/member/myPage/update/form", new UpdateMemberFormController());   //update로 가는 formController

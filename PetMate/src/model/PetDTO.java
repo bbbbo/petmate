@@ -44,6 +44,7 @@ public class PetDTO {
 	public void setPet_name(String pet_name) {
 		this.pet_name = pet_name;
 	}
+	
 	public PetDTO() { };
    
    public PetDTO(String userID, int pet_ID, String kind_ID, String pet_age, String pet_gender, String pet_name){

@@ -71,55 +71,37 @@ function userList(targetUri) {
        <br>     
        <table style="background-color: #353535" align="center">
          <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">사용자 ID</td>
+         <td width="150" align="center" bgcolor="#FFFFF"><b>사용자 ID</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240;" name="userId">
          </td>
         </tr>
           <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">비밀번호</td>
+         <td width="150" align="center" bgcolor="#FFFFF"><b>비밀번호</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="password" style="width: 240" name="pwd">
          </td>
         </tr>
           <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">비밀번호 확인</td>
+         <td width="150" align="center" bgcolor="#FFFFF"><b>비밀번호 확인</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="password" style="width: 240" name="pwd2">
          </td>
         </tr>
           <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">이름</td>
+         <td width="150" align="center" bgcolor="#FFFFF"><b>이름</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240" name="name" 
                 <c:if test="${registerFailed}">value="${user.name}"</c:if>>
          </td>
         </tr>
          <tr height="40">
-         <td width="150" align="center" bgcolor="ffffff">지역</td>
+         <td width="150" align="center" bgcolor="#FFFFF"><b>지역</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240" name="region" 
                 <c:if test="${registerFailed}">value="${user.region}"</c:if>>
          </td>
         </tr>
-        
-        <!--
-          <tr height="40">
-         <td width="150" align="center" bgcolor="E6ECDE">이메일 주소</td>
-         <td width="250" bgcolor="ffffff" style="padding-left: 10">
-            <input type="text" style="width: 240" name="email" 
-               <c:if test="${registerFailed}">value="${user.email}"</c:if>>
-         </td>
-        </tr>   
-          <tr height="40">
-         <td width="150" align="center" bgcolor="E6ECDE">전화번호</td>
-         <td width="250" bgcolor="ffffff" style="padding-left: 10">
-            <input type="text" style="width: 240" name="phone" 
-               <c:if test="${registerFailed}">value="${user.phone}"</c:if>>
-         </td>
-        </tr>      
-        
-        -->  
        </table>
        <br>     
        <table style="width: 100%">
