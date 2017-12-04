@@ -32,18 +32,21 @@ function beforePage(targetUri) {
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
 <br>
-<center>
-<h1>PetMate</h1>
-</center>
+<table align="center">
+<tr> 
+	<td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
+	<td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
+</tr>
+</table>
 <!-- pet form -->
-<form name="form" method="POST" action="<c:url value='/member/register/pet' />">
+<form name="form" method="POST" action="<c:url value='/member/registerPet' />">
 	<table style="width:100%" align="center">
 	<tr>
-		<td bgcolor="f4f4f4" height="22" align="center"><b>pet 등록</b></td>
+		<td height="22" align="center"><b>pet 등록</b></td>
     </tr>
     </table>  
 	<br>
-	<table style="background-color: #FF6CEB" align = 'center'>
+	<table style="background-color: #353535" align = 'center'>
     <tr height="30"> 
 		<td width="150" align="center" bgcolor="#FFFFFF">pet 이름 </td>
 		<td width="250" bgcolor="#FFFFFF" style="padding-left: 10">&nbsp;&nbsp;

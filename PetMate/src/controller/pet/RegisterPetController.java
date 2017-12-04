@@ -27,14 +27,13 @@ public class RegisterPetController implements Controller {
 				request.getAttribute("kind_ID").toString(),
 				request.getParameter("pet_age"),
 				request.getParameter("pet_gender"),
-				request.getParameter("pet_name")
-				);
+				request.getParameter("pet_name"));
 		
 		log.debug("Create Pet : {}", pet);
 		
 //		try{
 			petDAO.create(pet);
-			return "redirect:/main/form"; 	//main page로 넘어가기
+			return "redirect:/main.jsp"; 	//main page로 넘어가기
 //		}
 		
 		

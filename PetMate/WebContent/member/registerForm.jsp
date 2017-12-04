@@ -45,9 +45,12 @@ function userList(targetUri) {
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
 <br>
-<center>
-<h1>PetMate</h1>
-</center>
+<table align= "center">
+<tr> 
+	<td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
+	<td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
+</tr>
+</table>
 <!-- registration form  -->
 <form name="form" method="POST" action="<c:url value='/member/register' />">
   <table style="width: 100%">
@@ -56,7 +59,7 @@ function userList(targetUri) {
      <td>
        <table style="width: 100%">
         <tr>
-          <td bgcolor="f4f4f4" height="22" align="center">&nbsp;&nbsp;<b>사용자 관리 - 회원 가입</b></td>
+          <td height="22" align="center">&nbsp;&nbsp;<b>사용자 관리 - 회원 가입</b></td>
         </tr>
        </table>  
        <br>    
@@ -66,7 +69,7 @@ function userList(targetUri) {
        </c:if>
            
        <br>     
-       <table style="background-color: #FF6CEB" align="center">
+       <table style="background-color: #353535" align="center">
          <tr height="40">
          <td width="150" align="center" bgcolor="ffffff">사용자 ID</td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
