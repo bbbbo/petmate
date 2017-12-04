@@ -43,7 +43,10 @@ public class RequestMapping {
         mappings.put("/adopt/deleteAdopt", new DeleteAdoptController());	//입양 정보 삭제
         mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
      
-        
+        mappings.put("/member/myPage/form", new MyPageViewController());   //myPage보기
+        mappings.put("/member/myPage/update/form", new UpdateMemberFormController());   //update로 가는 formController
+        mappings.put("/member/myPage/update", new UpdateMemberController());   //updateController
+       
         
 //        mappings.put("/user/logout", new LogoutController());
 //        mappings.put("/user/view", new ViewUserController());

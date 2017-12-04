@@ -33,7 +33,7 @@ function userCreate(targetUri) {
 <table align="center">
 <tr> 
 	<td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
-	<td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
+	<td>&nbsp;<a href="<c:url value='/main/form'/>"><img src="<c:url value='/images/chat_caticon.png' />"></a>
 </tr>
 </table>
 
@@ -55,13 +55,13 @@ function userCreate(targetUri) {
        <br>     
        <table style="background-color: #353535" align="center">
           <tr height="30">
-         <td width="100" align="center" bgcolor="ffffff"><b>ID</b></td>
+         <td width="100" align="center" bgcolor="ffffff">아이디</td>
          <td width="200" bgcolor="ffffff" style="padding-left:10">
             <input type="text" style="width:180" name="userID">
          </td>
         </tr>
           <tr height="30">
-         <td width="100" align="center" bgcolor="ffffff"><b>비밀번호</b></td>
+         <td width="100" align="center" bgcolor="ffffff">비밀번호</td>
          <td width="200" bgcolor="ffffff" style="padding-left:10">
             <input type="password" style="width:180" name="pwd">
          </td>

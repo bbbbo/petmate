@@ -6,28 +6,73 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-   @SuppressWarnings("unchecked") 
-      List<AdoptDTO> adoptList = (List<AdoptDTO>)request.getAttribute("adoptList");
-   String curUserId = (String)request.getAttribute("curUserId");
+	@SuppressWarnings("unchecked") 
+   	List<AdoptDTO> adoptList = (List<AdoptDTO>)request.getAttribute("adoptList");
+	String curUserId = (String)request.getAttribute("curUserId");
 %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>PetMate_입양/분양 리스트 페이지</title>
+<title>PetMate_입양/분양 리스트</title>
 </head>
+<style>
+#topMenu { 
+	height: 30px; 
+	width: 850px;
+	} 
+#topMenu ul li { 
+	list-style: none;
+	color: white;
+	background-color: #FFBA85; 
+	float: left;
+	line-height: 40px;
+	vertical-align: middle; 
+	text-align: center;
+	 }
+#topMenu .menuLink { 
+ 	text-decoration:none;
+ 	color: white;
+ 	display: block;
+ 	width: 130px;
+ 	font-size: 12px;
+ 	font-weight: bold;
+ 	font-family: "Trebuchet MS", Dotum, Arial;
+ 	} 
+ #topMenu .menuLink:hover { 
+ 	color: black;
+ 	background-color: #FF9436; 
+ 	}
+</style>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
-<br>
 <table align="center">
 <tr> 
-   <td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
-   <td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
+<br><br>
+	<td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
+	<td>&nbsp;<a href="<c:url value='/main/form'/>"><img src="<c:url value='/images/chat_caticon.png' />"></a>
 </tr>
 </table>
+<br>
+<center>
+<nav id="topMenu" > 
+<ul> 
+<li><a class="menuLink" href="<c:url value='/member/myPage/form'/>">마이 페이지</a></li> 
+<li>|</li> 
+<li><a class="menuLink" href="<c:url value='/member/registerPet/form'/>">펫 등록</a></li> 
+<li>|</li> 
+<li><a class="menuLink" href="<c:url value='/member/registerAdopt/form'></c:url>">입양</a></li> 
+<li>|</li> 
+<li><a class="menuLink" href="<c:url value='/member/registerHospital/form'></c:url>">병원</a></li> 
+<li>|</li> 
+<li><a class="menuLink" href="<c:url value='/member/registerSell/form'></c:url>">물품 거래</a></li>
+<li>|</li> 
+<li><a class="menuLink" href="<c:url value='/member/registerFestival/form'></c:url>">축제</a></li> 
+</ul></nav>
+</center>
+<br>
 <!-- listAdopt form  -->
 <form name = "f" method = "post" action = "<c:url value='/adopt/addAdopt/form'/>">
   <table style="width:100%" align="center">
    <tr>
-     <td width="20"></td>
      <td>
        <table style="width:100%">
         <tr>
@@ -63,27 +108,27 @@
         
         <c:set var="kind" value="<%=adopt.getAdopt_kind() %>"/>
         <c:choose>
-           <c:when test="${kind == 'k1'}"> 
-           강아지
-           </c:when>
-           <c:when test="${kind == 'k2'}"> 
-           고양이
-           </c:when>
-           <c:when test="${kind == 'k3'}"> 
-           고슴도치
-             </c:when>
-             <c:when test="${kind == 'k4'}"> 
-           파충류
-           </c:when>
-             <c:when test="${kind == 'k5'}"> 
-           토끼
-           </c:when>
-             <c:when test="${kind == 'k6'}"> 
-           새
-           </c:when>
-             <c:when test="${kind == 'k7'}"> 
-           햄스터
-           </c:when>
+        	<c:when test="${kind == 'k1'}"> 
+        	강아지
+        	</c:when>
+        	<c:when test="${kind == 'k2'}"> 
+        	고양이
+        	</c:when>
+        	<c:when test="${kind == 'k3'}"> 
+        	고슴도치
+       		</c:when>
+       		<c:when test="${kind == 'k4'}"> 
+        	파충류
+        	</c:when>
+       		<c:when test="${kind == 'k5'}"> 
+        	토끼
+        	</c:when>
+       		<c:when test="${kind == 'k6'}"> 
+        	새
+        	</c:when>
+       		<c:when test="${kind == 'k7'}"> 
+        	햄스터
+        	</c:when>
         </c:choose>
   
          </td>
