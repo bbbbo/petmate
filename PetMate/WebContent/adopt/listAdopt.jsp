@@ -24,7 +24,7 @@
 </tr>
 </table>
 <!-- listAdopt form  -->
-<form name = "f" method = "post" action = "/member/AddAdopt.jsp">
+<form name = "f" method = "post" action = "<c:url value='/adopt/addAdopt/form'/>">
   <table style="width:100%" align="center">
    <tr>
      <td width="20"></td>
@@ -69,8 +69,7 @@
         </table>
        <br>   
        <table align = "center">
-       <!-- onClick 입양 글쓰기 (addAdopt) 연결하기 -->
-          <tr><td> <input type = "button" value = "글쓰기" /></td></tr>
+          <tr><td> <input type = "submit" value = "글쓰기" /></td></tr>
        </table>
      </td>
    </tr>

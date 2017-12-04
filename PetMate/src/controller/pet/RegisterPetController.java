@@ -24,7 +24,7 @@ public class RegisterPetController implements Controller {
 		PetDTO pet = new PetDTO(
 				curUserId,
 				1,
-				request.getAttribute("kind_ID").toString(),
+				request.getParameter("kind_ID"),
 				request.getParameter("pet_age"),
 				request.getParameter("pet_gender"),
 				request.getParameter("pet_name"));
