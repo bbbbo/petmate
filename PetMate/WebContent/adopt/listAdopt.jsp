@@ -6,9 +6,9 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	@SuppressWarnings("unchecked") 
-   	List<AdoptDTO> adoptList = (List<AdoptDTO>)request.getAttribute("adoptList");
-	String curUserId = (String)request.getAttribute("curUserId");
+   @SuppressWarnings("unchecked") 
+      List<AdoptDTO> adoptList = (List<AdoptDTO>)request.getAttribute("adoptList");
+   String curUserId = (String)request.getAttribute("curUserId");
 %>
 <html>
 <head>
@@ -19,8 +19,8 @@
 <br>
 <table align="center">
 <tr> 
-	<td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
-	<td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
+   <td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
+   <td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
 </tr>
 </table>
 <!-- listAdopt form  -->
@@ -44,15 +44,12 @@
   <%
         if(adoptList != null){
             Iterator<AdoptDTO> adoptIter = adoptList.iterator();
-            int flag = 1;
             
             while(adoptIter.hasNext()){
                AdoptDTO adopt = (AdoptDTO)adoptIter.next();
-               String id = adopt.getUserID();
                String adopt_Id = String.valueOf(adopt.getAdopt_ID());
-             
-  %>				
-        <tr> <!-- 사용자 ID와 세션 아이디가 다를 경우   -->
+  %>
+        <tr> <!-- 사용자 ID 클릭시 상세보기  -->
         <td width ="200" align = "center" bgcolor = "ffffff">
            <a href = "<c:url value='/adopt/viewAdopt'>
                  <c:param name='adoptId' value ='<%= adopt_Id %>'/>
@@ -61,12 +58,38 @@
            <%= adopt.getUserID() %>
            </a>
         </td>
-       
-         <td width ="200" align = "center" bgcolor = "ffffff"><%= adopt.getAdopt_kind() %>
+        
+         <td width ="200" align = "center" bgcolor = "ffffff">
+        
+        <c:set var="kind" value="<%=adopt.getAdopt_kind() %>"/>
+        <c:choose>
+           <c:when test="${kind == 'k1'}"> 
+           강아지
+           </c:when>
+           <c:when test="${kind == 'k2'}"> 
+           고양이
+           </c:when>
+           <c:when test="${kind == 'k3'}"> 
+           고슴도치
+             </c:when>
+             <c:when test="${kind == 'k4'}"> 
+           파충류
+           </c:when>
+             <c:when test="${kind == 'k5'}"> 
+           토끼
+           </c:when>
+             <c:when test="${kind == 'k6'}"> 
+           새
+           </c:when>
+             <c:when test="${kind == 'k7'}"> 
+           햄스터
+           </c:when>
+        </c:choose>
+  
          </td>
          </tr>
     <%
-            }
+              }
         }
     %>
         </table>

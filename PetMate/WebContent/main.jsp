@@ -26,25 +26,23 @@
        </table>  
        <br>     
        <table style="background-color: #353535" align = 'center' >
-          <tr height="30">
-         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerPet/form'/>">
-         	<b>펫 등록</b></a></td>
+       <tr height="30">
+         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/myPage/form'/>">마이 페이지</a></td>
         </tr>
           <tr height="30">
-         <td width="00" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerAdopt/form' />">
-         	<b>입양</b></a></td>
+         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerPet/form'/>"> 펫 등록</a></td>
+        </tr>
+          <tr height="30">
+         <td width="00" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerAdopt/form'></c:url>">입양</a></td>
         </tr>
          <tr height="30">
-         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerHospital/form' />">
-         	<b>병원</b></a></td>
+         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerHospital/form'></c:url>">병원</a></td>
         </tr>
          <tr height="30">
-         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerSell/form' />">
-         	<b>물품 거래</b></a></td>
+         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerSell/form'></c:url>">물품 거래</a></td>
         </tr>
          <tr height="30">
-         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerFestival/form' />">
-         	<b>축제</b></a></td>
+         <td width="300" align="center" bgcolor="#FFFFFF"><a href="<c:url value='/member/registerFestival/form'></c:url>">축제</a></td>
         </tr>
        </table>
        <br>     

@@ -26,6 +26,7 @@ public class RequestMapping {
         mappings.put("/member/registerSucc/form", new ForwardController("/member/loginForm.jsp"));   
         mappings.put("/member/registerPet/form", new ForwardController("/member/registerPet.jsp"));
         mappings.put("/member/registerPet", new RegisterPetController());	//pet 등록
+        mappings.put("/member/myPage/form", new ForwardController("/member/myPage.jsp"));	//마이페이지 이동
         
         mappings.put("/member/registerHospital/form", new ForwardController("/hospital/searchHospital.jsp"));	//병원 추가
         mappings.put("/member/hospital", new ForwardController("/hospital/searchHospital_list.jsp")); 
@@ -35,7 +36,6 @@ public class RequestMapping {
         mappings.put("/adopt/addAdopt/form" , new ForwardController("/adopt/AddAdopt.jsp"));
         mappings.put("/adopt/registerAdopt", new RegisterAdoptController());
         mappings.put("/adopt/viewAdopt", new ViewAdoptController());	//입양 상세보기
-        mappings.put("/adopt/viewMyAdopt", new ViewMyAdoptController());	//나의 입양 상세보기 (수정, 삭제)
         
         mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
         
