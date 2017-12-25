@@ -22,10 +22,6 @@ function login() {
    form.submit();
 }
 
-function userCreate(targetUri) {
-   form.action = targetUri;
-   form.submit();
-}
 </script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>
@@ -49,12 +45,12 @@ function userCreate(targetUri) {
         </tr>
        </table>  
        <!-- 로그인이 실패한 경우 exception 객체에 저장된 오류 메시지를 출력 -->
-        <c:if test="${loginFailed}">
-          <center><font color="red"><c:out value="${exception.getMessage()}" /></font></center>
-       </c:if>
-        <c:if test="${NotLogin}">
-          <center><font color="red"><c:out value="${msg}" /></font></center>
-       </c:if>
+        <center><c:if test="${loginFailed}">
+          <font color="red"><c:out value="${exception.getMessage()}" /></font>
+       </c:if></center>
+       <center><c:if test="${NotLogin}">
+          <font color="red"><c:out value="${msg}" /></font>
+       </c:if></center>
        <br>     
        <table style="background-color: #353535" align="center">
           <tr height="30">
@@ -75,7 +71,6 @@ function userCreate(targetUri) {
         <tr>
          <td align=center>
          <input type="button" value="로그인"  onClick="login()"> &nbsp;
-         <input type="button" value="회원가입" onClick="userCreate('<c:url value='/member/registerMember/form' />')">
          </td>         
         </tr>
        </table>

@@ -36,6 +36,14 @@
  	}
 </style>
 <script>
+
+function numkeyCheck(e){
+	var keyValue = event.keyCode; 
+	if( ((keyValue >= 48) && (keyValue <= 57)) ) 
+		return true; 
+	return false; 
+	}
+	
 function addAdopt() {
    if(form.adopt_price.value == "") {
       alert("가격을 입력하십시오.");
@@ -94,13 +102,13 @@ function addAdopt() {
          <tr height="30">
          <td width="150" align="center" bgcolor="#FFFFF" align = "center"><b>pet 가격</b></td>
          <td width = "200" align = "center" bgcolor = "#FFFFFF">
-         <input type="text" style="width:240" name="adopt_price">원
+         <input type="text" style="width:240" name="adopt_price" onKeyPress="return numkeyCheck(event)">원
          </td>
         </tr>
          <tr height="30">
          <td width="150" align="center" bgcolor="#FFFFF" align = "center"><b>pet 나이</b></td>
          <td width = "200" align = "center" bgcolor = "#FFFFFF">
-         <input type="text" style="width:240" name="adopt_age">
+         <input type="text" style="width:240" name="adopt_age" onKeyPress="return numkeyCheck(event)">살
          </td>
         </tr>
         <tr height="30"> 

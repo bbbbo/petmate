@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="model.*"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>PetMate_ÀÔ¾ç/ºĞ¾ç Á¤º¸ ÆäÀÌÁö</title>
+<title>PetMate_ì…ì–‘/ë¶„ì–‘ ì •ë³´ í˜ì´ì§€</title>
 <script>
 function priceList(targetUri) {
 	   form.action = targetUri;
@@ -32,7 +32,7 @@ function priceList(targetUri) {
 <br>
  <table style="width:100%">
    <tr>
-   <td height="22" align="center">&nbsp;&nbsp;<b>ÀÔ¾ç/ºĞ¾ç »ó¼¼ ÆäÀÌÁö</b></td>
+   <td height="22" align="center">&nbsp;&nbsp;<b>ì…ì–‘/ë¶„ì–‘ ìƒì„¸ í˜ì´ì§€</b></td>
    </tr>
 </table>
 <br>
@@ -40,72 +40,72 @@ function priceList(targetUri) {
 <input type="hidden" name="kind" value="<%= adopt.getAdopt_kind() %>"	/>
 <table style="background-color: #353535" align="center">
    <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFF"><b>»ç¿ëÀÚ¾ÆÀÌµğ</b></td>
+        <td width="150" align="center" bgcolor="#FFFFF"><b>ì‚¬ìš©ìì•„ì´ë””</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
         &nbsp;<%= adopt.getUserID() %></td>
       </tr>
       <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFF"><b>pet ³ªÀÌ</b></td>
+        <td width="150" align="center" bgcolor="#FFFFF"><b>pet ë‚˜ì´</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
             &nbsp;<%= adopt.getAdopt_age() %></td>
       </tr>
     <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFF"><b>pet Á¾·ù</b></td>
+        <td width="150" align="center" bgcolor="#FFFFF"><b>pet ì¢…ë¥˜</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
              <c:set var="kind" value="<%=adopt.getAdopt_kind() %>"/>
         <c:choose>
            <c:when test="${kind == 'k1'}"> 
-           		°­¾ÆÁö
+           		ê°•ì•„ì§€
            </c:when>
            <c:when test="${kind == 'k2'}"> 
-        		  °í¾çÀÌ
+        		  ê³ ì–‘ì´
            </c:when>
            <c:when test="${kind == 'k3'}">
-           		°í½¿µµÄ¡
+           		ê³ ìŠ´ë„ì¹˜
              </c:when>
              <c:when test="${kind == 'k4'}"> 
-           		ÆÄÃæ·ù
+           		íŒŒì¶©ë¥˜
            </c:when>
              <c:when test="${kind == 'k5'}"> 
-          		 Åä³¢
+          		 í† ë¼
            </c:when>
              <c:when test="${kind == 'k6'}"> 
-         		  »õ
+         		  ìƒˆ
            </c:when>
              <c:when test="${kind == 'k7'}"> 
-           		ÇÜ½ºÅÍ
+           		í–„ìŠ¤í„°
            </c:when>
         </c:choose>
       </tr>
       <tr height="30">
-       <td width="150" align="center" bgcolor="#FFFFF"><b>pet ¼ºº°</b></td>
+       <td width="150" align="center" bgcolor="#FFFFF"><b>pet ì„±ë³„</b></td>
        <td width="150" bgcolor="ffffff" style="padding-left:10">
             &nbsp;<%= adopt.getAdopt_gender() %> </td>
       </tr>
       <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFF"><b>°¡°İ</b></td>
+        <td width="150" align="center" bgcolor="#FFFFF"><b>ê°€ê²©</b></td>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
-            &nbsp;<%= adopt.getAdopt_price() %>¿ø</td>
+            &nbsp;<%= adopt.getAdopt_price() %>ì›</td>
       </tr>
       <tr height="30">
-        <td width="150" align="center" bgcolor="#FFFFF"><b>»óÅÂ</b></td>
+        <td width="150" align="center" bgcolor="#FFFFF"><b>ìƒíƒœ</b></td>
         <% if(adopt.getIs_adopted() == 0){ %>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
-            &nbsp;ÁøÇàÁß</td>
+            &nbsp;ì§„í–‰ì¤‘</td>
         <% } else { %>
         <td width="150" bgcolor="ffffff" style="padding-left:10">
-            &nbsp;¿Ï·á</td>
+            &nbsp;ì™„ë£Œ</td>
         <% } %>
       </tr>
 </table>
 <br>
 <center>
-<!--  <input type = "button" value="¸ñ·Ï" onClick="<c:url value='/adopt/listAdopt/form' />"/> -->
-<input type = "submit" value="¸ñ·Ï" />
+<!--  <input type = "button" value="ëª©ë¡" onClick="<c:url value='/adopt/listAdopt/form' />"/> -->
+<input type = "submit" value="ëª©ë¡" />
 </center>
   		<table align = "center">
   		<br>
-  		<center><h4>´ñ±Û ¸®½ºÆ®</h4></center>
+  		<center><h4>ëŒ“ê¸€ ë¦¬ìŠ¤íŠ¸</h4></center>
   		 <%
         if(com != null){
             Iterator<AdoptCommentDTO> comIter = com.iterator();
@@ -127,7 +127,7 @@ function priceList(targetUri) {
      		<input type="hidden" id="adoptId" name="adoptId" value='<%= String.valueOf(adopt.getAdopt_ID()) %>'/>
      		<input type="hidden" id="userId" name="userId" value='<%= adopt.getUserID() %>'/>
      		<input type="text" id="comment" name="comment" />
-     		<input type="button" value="´ñ±Û ÀÔ·Â" onClick= "priceList('<c:url value='/comment/adoptRegister' />')" />
+     		<input type="button" value="ëŒ“ê¸€ ì…ë ¥" onClick= "priceList('<c:url value='/comment/adoptRegister' />')" />
      	</form>
      	</center>
 		</td>

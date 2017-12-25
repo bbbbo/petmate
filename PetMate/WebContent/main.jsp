@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@page import = "controller.member.*" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -38,6 +39,13 @@
  	}
 </style>
 <head>
+<script>
+function userCreate(targetUri) {
+   form.action = targetUri;
+   form.submit();
+   
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>PetMate_Main</title>
 </head> <!-- background="<c:url value='/images/intro_img.png'/>" -->
@@ -64,8 +72,15 @@
 </div>
 <table align="center">
 <tr> 
-<a href="<c:url value='/member/logout'></c:url>"><img src="<c:url value='/images/logout.JPG'/>" width="60px" height="40px" / align = right></a>&nbsp;
-<a href="<c:url value='/member/login/form'></c:url>"><img src="<c:url value='/images/login.JPG'/>" width="60px" height="40px" / align = right></a>
+
+<%if(session.getAttribute(UserSessionUtils.USER_SESSION_KEY) != null){ %>
+<%= session.getAttribute(UserSessionUtils.USER_SESSION_KEY)%>님 환영합니다!
+ <a href="<c:url value='/member/logout'/>">로그아웃</a>
+<%}%><%if(session.getAttribute(UserSessionUtils.USER_SESSION_KEY) == null) {%>
+<a href="<c:url value='/member/registerMember/form'></c:url>"><img src="<c:url value='/images/join.JPG'/>" width="60px" height="40px" align = left></a>&nbsp;
+<a href="<c:url value='/member/login/form'></c:url>"><img src="<c:url value='/images/login.JPG'/>" width="60px" height="40px" align =left ></a>
+<%}%>
+
 <br><br>
 	<td><img src="<c:url value='/images/petmate.JPG'/>"/></td>
 </tr>
