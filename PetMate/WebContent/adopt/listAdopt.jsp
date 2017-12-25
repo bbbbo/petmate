@@ -103,14 +103,14 @@
         </td>
         <% if(check == 0){ %>
         <td width ="170" align = "center" bgcolor = "ffffff">
-         <a href = "<c:url value='/adopt/viewAdopt'>
+         <a href = "<c:url value='/comment/adoptlist'>
                  <c:param name='adoptId' value ='<%= adopt_Id %>'/>
                  <c:param name='userId' value ='<%= adopt.getUserID() %>' />
                  </c:url>">입양/분양 중</a>
         </td> 
         <% } else {%>
         <td width ="200" align = "center" bgcolor = "ffffff">
-         <a href = "<c:url value='/adopt/viewAdopt'>
+         <a href = "<c:url value='/comment/adoptlist'>
                  <c:param name='adoptId' value ='<%= adopt_Id %>'/>
                  <c:param name='userId' value ='<%= adopt.getUserID() %>' />
                  </c:url>">입양/분양 완료</a>

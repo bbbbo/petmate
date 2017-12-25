@@ -94,7 +94,7 @@ function addAdopt() {
          <tr height="30">
          <td width="150" align="center" bgcolor="#FFFFF" align = "center"><b>pet °¡°Ý</b></td>
          <td width = "200" align = "center" bgcolor = "#FFFFFF">
-         <input type="text" style="width:240" name="adopt_price">
+         <input type="text" style="width:240" name="adopt_price">¿ø
          </td>
         </tr>
          <tr height="30">

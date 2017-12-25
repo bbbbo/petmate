@@ -50,7 +50,10 @@ function userCreate(targetUri) {
        </table>  
        <!-- 로그인이 실패한 경우 exception 객체에 저장된 오류 메시지를 출력 -->
         <c:if test="${loginFailed}">
-          <font color="red"><c:out value="${exception.getMessage()}" /></font>
+          <center><font color="red"><c:out value="${exception.getMessage()}" /></font></center>
+       </c:if>
+        <c:if test="${NotLogin}">
+          <center><font color="red"><c:out value="${msg}" /></font></center>
        </c:if>
        <br>     
        <table style="background-color: #353535" align="center">

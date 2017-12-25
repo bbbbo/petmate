@@ -1,6 +1,6 @@
 package model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class FestivalDTO {
 	private String userID;
@@ -8,6 +8,7 @@ public class FestivalDTO {
 	private Date festival_date;
 	private String festival_title;
 	private String festival_place;
+	
 	public String getUserID() {
 		return userID;
 	}
@@ -40,9 +41,7 @@ public class FestivalDTO {
 	}
 	public FestivalDTO() { };
    
-   public FestivalDTO(String userID, String festival_ID, Date festival_date, String festival_title, String festival_place){
-      this.userID = userID;
-      this.festival_ID = festival_ID;
+   public FestivalDTO(String festival_title, Date festival_date, String festival_place){
       this.festival_date = festival_date;
       this.festival_title = festival_title;
       this.festival_place = festival_place;

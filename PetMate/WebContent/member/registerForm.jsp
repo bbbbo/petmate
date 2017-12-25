@@ -92,14 +92,29 @@ function userList(targetUri) {
          <td width="150" align="center" bgcolor="#FFFFF"><b>이름</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
             <input type="text" style="width: 240" name="name" 
-                <c:if test="${registerFailed}">value="${user.name}"</c:if>>
+                <c:if test="${registerFailed}">value="${member.name}"</c:if>>
          </td>
         </tr>
          <tr height="40">
          <td width="150" align="center" bgcolor="#FFFFF"><b>지역</b></td>
          <td width="250" bgcolor="ffffff" style="padding-left: 10">
-            <input type="text" style="width: 240" name="region" 
-                <c:if test="${registerFailed}">value="${user.region}"</c:if>>
+        <select name="region">
+    			<option value="서울">서울</option>
+    			<option value="인천">인천</option>
+    			<option value="경기">경기</option>
+    			<option value="강원">강원</option>
+    			<option value="부산">부산</option>
+    			<option value="대구">대구</option>
+    			<option value="대전">대전</option>
+    			<option value="전북">전북</option>
+    			<option value="전남">전남</option>
+    			<option value="경북">경북</option>
+    			<option value="경남">경남</option>
+    			<option value="충북">충북</option>
+    			<option value="충남">충남</option>
+    			<option value="제주">제주</option>
+    			</select>
+                <c:if test="${registerFailed}">value="${member.region}"</c:if>
          </td>
         </tr>
        </table>

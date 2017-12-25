@@ -7,18 +7,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
     AdoptDTO adopt = (AdoptDTO)request.getAttribute("adopt");
+    List<AdoptCommentDTO> com = (List<AdoptCommentDTO>)request.getAttribute("adoptList");
+    String curUserId = (String)request.getAttribute("curUserId");
 %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>PetMate_입양/분양 정보 페이지</title>
+<script>
+function priceList(targetUri) {
+	   form.action = targetUri;
+	   form.submit();
+}
+</script>
 </head>
 <body bgcolor = #FFFFFF>
 <br>
 <table align="center">
 <tr> 
    <td><h1><font color=#FF5E00 size="24px">PetMate</font></h1></td> 
-   <td>&nbsp;<img src="<c:url value='/images/chat_caticon.png' />">
+   <td><a href="<c:url value='/main/form'/>"><img src="<c:url value='/images/chat_caticon.png' />"></a>
 </tr>
 </table>
 <br>
@@ -28,7 +36,7 @@
    </tr>
 </table>
 <br>
-<form name = "f" method = "get" action = "<c:url value='/adopt/listAdopt'/>">
+<form name = "form" method = "get" action = "<c:url value='/adopt/listAdopt'/>">
 <input type="hidden" name="kind" value="<%= adopt.getAdopt_kind() %>"	/>
 <table style="background-color: #353535" align="center">
    <tr height="30">
@@ -95,6 +103,46 @@
 <!--  <input type = "button" value="목록" onClick="<c:url value='/adopt/listAdopt/form' />"/> -->
 <input type = "submit" value="목록" />
 </center>
+  		<table align = "center">
+  		<br>
+  		<center><h4>댓글 리스트</h4></center>
+  		 <%
+        if(com != null){
+            Iterator<AdoptCommentDTO> comIter = com.iterator();
+            
+            while(comIter.hasNext()){
+            	AdoptCommentDTO comment = (AdoptCommentDTO)comIter.next();
+  %>
+  		<tr><td><%= comment.getUserid() %></td>
+  		<td><%= comment.getContent() %></td>
+  		<td><%= comment.getTime() %></td>
+  		</tr>
+  <%
+            }
+        }
+  %>
+		<tr><td  align="center">
+		<center>
+     	<form name="f" method="POST">
+     		<input type="hidden" id="adoptId" name="adoptId" value='<%= String.valueOf(adopt.getAdopt_ID()) %>'/>
+     		<input type="hidden" id="userId" name="userId" value='<%= adopt.getUserID() %>'/>
+     		<input type="text" id="comment" name="comment" />
+     		<input type="button" value="댓글 입력" onClick= "priceList('<c:url value='/comment/adoptRegister' />')" />
+     	</form>
+     	</center>
+		</td>
+		</tr>
+		</table>
+		<br>
+		<table style="width:100%">
+		<tr>
+		<td>
+		<c:if test="${NotLogin}">
+		<center><font color="red"><c:out value="${msg}" /></font></center>
+		</c:if>
+		</td>
+		</tr></table>
 </form>
+<br><br><br>
 </body>
 </html>
