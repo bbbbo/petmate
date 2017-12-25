@@ -1,5 +1,8 @@
 package model;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 public class AdoptDTO {
    private String userID;
    private int adopt_ID;
@@ -7,6 +10,24 @@ public class AdoptDTO {
    private int adopt_age;
    private String adopt_kind;
    private String adopt_gender;
+   private int is_adopted;
+   private String adopt_date;
+   
+  
+   public void setIs_adopted(int is_adopted){
+	   this.is_adopted = is_adopted;
+   }
+   public int getIs_adopted(){
+	   return is_adopted;
+   }
+   
+   public void setAdopt_date(Date adopt_date){
+	   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	   this.adopt_date = sdf.format(adopt_date);
+   }
+   public String getAdopt_date(){
+	   return adopt_date;
+   }
    
    public String getUserID() {
       return userID;
@@ -45,15 +66,18 @@ public class AdoptDTO {
       this.adopt_gender = adopt_gender;
    }
 
-public AdoptDTO() { };
+   public AdoptDTO() { };
    
-   public AdoptDTO(String userID, int adopt_ID, int adopt_price, int adopt_age, String adopt_kind, String adopt_gender){
+   public AdoptDTO(String userID, int adopt_ID, int adopt_price, int adopt_age, String adopt_kind, String adopt_gender, int is_adopted, String adopt_date){
       this.userID = userID;
       this.adopt_ID = adopt_ID;
       this.adopt_price = adopt_price;
       this.adopt_age = adopt_age;
       this.adopt_kind = adopt_kind;
       this.adopt_gender = adopt_gender;
+      this.is_adopted = is_adopted;
+      this.adopt_date = adopt_date;
    }
    
-}
+  
+}	

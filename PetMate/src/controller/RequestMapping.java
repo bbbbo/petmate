@@ -18,7 +18,7 @@ public class RequestMapping {
 
     public void initMapping() {
     	// 각 uri에 대응되는 controller 객체를 생성 및 저장
-    	
+    	mappings.put("/", new ForwardController("/main.jsp"));	//main.jsp로 수정할 것
     	mappings.put("/member/login",new LoginController());      //[succ] main, [fail] loginForm
         mappings.put("/member/registerMember", new RegisterMemberController());     //[succ] loginForm, [fail]registerFrom
         mappings.put("/main/form", new ForwardController("/main.jsp"));       
@@ -33,16 +33,20 @@ public class RequestMapping {
         mappings.put("/hospital/list/form", new ForwardController("/hospital/searchHospital_list.jsp")); 
         mappings.put("/hospital/HospitalList", new searchHospitalController());	//병원 검색
         
-        mappings.put("/member/registerAdopt/form", new ListAdoptController());	//입양 리스트
+        /*************/
+        mappings.put("/member/deletePet", new DeletePetController()); //pet 삭제
+        mappings.put("/member/updatePet", new UpdatePetController()); //pet 수정
+        mappings.put("/member/updatePetForm", new UpdatePetFormController()); //pet 수정 화면
+        
+        mappings.put("/adopt/listAdopt", new ListAdoptController());	//입양 리스트
+        mappings.put("/member/registerAdopt/form", new ForwardController("/adopt/mainAdopt.jsp"));
         mappings.put("/adopt/addAdopt/form" , new ForwardController("/adopt/AddAdopt.jsp"));
         mappings.put("/adopt/registerAdopt", new RegisterAdoptController());
-        mappings.put("/adopt/viewAdopt", new ViewAdoptController());	//입양 상세보기
-        
-    
+        mappings.put("/adopt/viewAdopt", new ViewAdoptController());	//입양 상세보기      
         mappings.put("/adopt/updateAdoptForm", new UpdateAdoptFormController());	//정보 업데이트 화면 연결
         mappings.put("/adopt/updateAdopt", new UpdateAdoptController());	//입양 정보 업데이트
         mappings.put("/adopt/deleteAdopt", new DeleteAdoptController());	//입양 정보 삭제
-//        mappings.put("/adopt/listAdopt/form", new ForwardController("/adopt/listAdopt.jsp"));	//입양 리스트 페이지로 돌아가기
+
      
         mappings.put("/member/myPage/form", new MyPageViewController());   //myPage보기
         mappings.put("/member/myPage/update/form", new UpdateMemberFormController());   //update로 가는 formController

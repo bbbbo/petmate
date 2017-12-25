@@ -15,7 +15,6 @@ import model.service.PetManager;
 
 public class RegisterPetController implements Controller {
 	private static final Logger log = LoggerFactory.getLogger(RegisterPetController.class);
-	private PetDAO petDAO = new PetDAO();
 	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -24,7 +23,7 @@ public class RegisterPetController implements Controller {
 		
 		PetDTO pet = new PetDTO(
 				curUserId,
-				1,
+				0,
 				request.getParameter("kind_ID"),
 				request.getParameter("pet_age"),
 				request.getParameter("pet_gender"),

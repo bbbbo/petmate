@@ -23,11 +23,6 @@ function petCreate() {
    alert("펫 등록이 성공적으로 되었습니다");
    form.submit();
 }
-
-function beforePage(targetUri) {
-   form.action = targetUri;
-   form.submit();
-}
 </script>
 <style>
 #topMenu { 
@@ -129,7 +124,7 @@ function beforePage(targetUri) {
 	<table style="width:100%">
 	<tr>
 		<td align=center> 
-			<input type="button" value="이전"  onClick="beforePage('<c:url value='/main/form' />')"> &nbsp;
+		 <a href="<c:url value='/member/listPet'></c:url>">마이펫 리스트보기</a> &nbsp;  
 			<input type="button" value="등록" onClick="petCreate()">
 		</td>			
 	</tr>

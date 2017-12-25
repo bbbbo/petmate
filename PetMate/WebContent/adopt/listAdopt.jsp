@@ -70,7 +70,7 @@
 </center>
 <br>
 <!-- listAdopt form  -->
-<form name = "f" method = "post" action = "<c:url value='/adopt/addAdopt/form'/>">
+<%-- <form name = "f" method = "post" action = "<c:url value='/adopt/addAdopt/form'/>"> --%>
   <table style="width:100%" align="center">
    <tr>
      <td>
@@ -82,8 +82,10 @@
        <br>     
        <table style="background-color:#353535" align = 'center'>
          <tr height="30">
-         <td width="200" align="center" bgcolor="#FFFFF" align = "center"><b>사용자 아이디</b></td>
-         <td width = "200" align = "center" bgcolor = "#FFFFF"><b>펫 종류</b></td> 
+         <td width="170" align="center" bgcolor="#FFFFF" align = "center"><b>사용자 아이디</b></td>
+         <td width="170" align="center" bgcolor="#FFFFF" align = "center"><b>상태</b></td>
+         <td width = "170" align = "center" bgcolor = "#FFFFF"><b>펫 종류</b></td> 
+         <td width = "170" align = "center" bgcolor = "#FFFFF"><b>등록일</b></td> 
         </tr>
         
   <%
@@ -93,19 +95,28 @@
             while(adoptIter.hasNext()){
                AdoptDTO adopt = (AdoptDTO)adoptIter.next();
                String adopt_Id = String.valueOf(adopt.getAdopt_ID());
+               int check = adopt.getIs_adopted();
   %>
         <tr> <!-- 사용자 ID 클릭시 상세보기  -->
-        <td width ="200" align = "center" bgcolor = "ffffff">
-           <a href = "<c:url value='/adopt/viewAdopt'>
+        <td width ="170" align = "center" bgcolor = "ffffff">
+        <%= adopt.getUserID() %>
+        </td>
+        <% if(check == 0){ %>
+        <td width ="170" align = "center" bgcolor = "ffffff">
+         <a href = "<c:url value='/adopt/viewAdopt'>
                  <c:param name='adoptId' value ='<%= adopt_Id %>'/>
                  <c:param name='userId' value ='<%= adopt.getUserID() %>' />
-                 </c:url>">
-           <%= adopt.getUserID() %>
-           </a>
+                 </c:url>">입양/분양 중</a>
+        </td> 
+        <% } else {%>
+        <td width ="200" align = "center" bgcolor = "ffffff">
+         <a href = "<c:url value='/adopt/viewAdopt'>
+                 <c:param name='adoptId' value ='<%= adopt_Id %>'/>
+                 <c:param name='userId' value ='<%= adopt.getUserID() %>' />
+                 </c:url>">입양/분양 완료</a>
         </td>
-        
-         <td width ="200" align = "center" bgcolor = "ffffff">
-        
+        <% } %>
+        <td width ="170" align = "center" bgcolor = "ffffff">
         <c:set var="kind" value="<%=adopt.getAdopt_kind() %>"/>
         <c:choose>
         	<c:when test="${kind == 'k1'}"> 
@@ -130,8 +141,10 @@
         	햄스터
         	</c:when>
         </c:choose>
-  
          </td>
+         <td width ="200" align = "center" bgcolor = "ffffff">
+        <%= adopt.getAdopt_date() %>
+        </td>  
          </tr>
     <%
               }
@@ -139,12 +152,12 @@
     %>
         </table>
        <br>   
-       <table align = "center">
-          <tr><td> <input type = "submit" value = "글쓰기" /></td></tr>
-       </table>
+<!--        <table align = "center"> -->
+<!--           <tr><td> <input type = "submit" value = "글쓰기" /></td></tr> -->
+<!--        </table> -->
      </td>
    </tr>
   </table>  
-</form>
+<!-- </form> -->
 </body>
 </html>

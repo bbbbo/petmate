@@ -33,7 +33,8 @@ function adoptRemove() {
    </tr>
 </table>
 <br>
-<form name="form" method="POST" action = "<c:url value='/member/registerAdopt/form'/>">
+<form name="form" method="POST" action = "<c:url value='/adopt/listAdopt'/>">
+<input type="hidden" name="kind" value="<%= adopt.getAdopt_kind() %>"	/>
 <table style="background-color: #353535" align="center">
    <tr height="30">
         <td width="150" align="center" bgcolor="#FFFFF"><b>사용자아이디</b></td>
@@ -81,15 +82,25 @@ function adoptRemove() {
       <tr height="30">
         <td width="150" align="center" bgcolor="#FFFFF"><b>가격</b></td>
         <td width="250" bgcolor="ffffff" style="padding-left:10">
-            &nbsp;<%= adopt.getAdopt_price() %></td>
+            &nbsp;<%= adopt.getAdopt_price() %>원</td>
+      </tr>
+      <tr height="30">
+        <td width="150" align="center" bgcolor="#FFFFF"><b>상태</b></td>
+        <td width="250" bgcolor="ffffff" style="padding-left:10">
+        <% if(adopt.getIs_adopted() == 0){ %>
+            &nbsp;진행중
+        <% } else { %>
+            &nbsp;완료
+        <% } %>
+        </td>
       </tr>
 </table>
 <br>
 <center>
-	 <!--  <a href="<c:url value='/adopt/updateAdoptForm'>
+	  <a href="<c:url value='/adopt/updateAdoptForm'>
 	 	<c:param name='adoptId' value ='<%= String.valueOf(adopt.getAdopt_ID()) %>'/>
      	<c:param name='userId' value ='<%= adopt.getUserID() %>' />
-     </c:url>">수정</a>--> &nbsp; 
+     </c:url>">수정</a> &nbsp; 
      <a href="<c:url value='/adopt/deleteAdopt'>
 	 	<c:param name='adoptId' value ='<%= String.valueOf(adopt.getAdopt_ID()) %>'/>
      	<c:param name='userId' value ='<%= adopt.getUserID() %>' />
